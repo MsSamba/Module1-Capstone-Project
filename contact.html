@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="logo">SMM</h1>
+        <div class="links">
+           <button class="home"> <a href="index.html">Home</a></button>
+            <div class="dropdown">
+                <button class="dropbtn">Investment Options</button>
+                <div class="dropdown-content">
+                  <a href="mmf.html">Money Market Fund (MMF)</a>
+                  <a href="govtsecurities.html">Government Securities</a>
+                  <a href="realestate.html">Real Estate</a>
+                  <a href="saccos.html">Saccos</a>
+                </div>
+              </div>
+        </div>
+    </div>
+      
+    <hr>
+      
+    <form action="#">
+        <div class="left-container"> 
+            <h2>Let's Chat</h2>
+            <p>Whether you have a question, want to start your investment journey or simply want to connect, feel free to send me a message via the contact form or reach me via any of my social media handles.</p>
+
+            <div class="social-container">
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a> 
+                <a href="#"><i class='bx bxl-github'></i></a> 
+                <a href="#"><i class='bx bxl-instagram' ></i></a> 
+                <a href="#"> <i class='bx bxl-twitter'> </i></a>
+            </div>
+
+        </div>
+
+        <div class="right-container">
+              <h2>Contact Me</h2>
+              <div>
+                <input type="text" placeholder="Enter Your Name" required>
+              </div>
+
+              <div>
+                <input type="email" placeholder="Enter Your Email Address" required>
+              </div>
+
+              <div>
+                <input type="text" placeholder="Enter your Phone Number" required>
+              </div>
+
+              <div>
+                <textarea name="message" id="" placeholder="Type your Message Here"  rows="5" required></textarea>
+              </div>
+
+              <button>Send Message</button>
+        </div>
+       </form>
+
+
+    <div class="recommendation-container">
+        <h2>Investment Recommendation Tool</h2>
+        
+        <div class="recommendation-input-group">
+            <label for="capital">Starting Capital (KES):</label>
+            <input type="number" id="capital" min="1" required>
+        </div>
+
+        <div class="recommendation-input-group">
+            <label for="period">Investment Period:</label>
+            <select id="period">
+                <option value="short">Short-term (&gt;1 year)</option>
+                <option value="long">Long-term (&lt;1 year)</option>
+            </select>
+        </div>
+
+        <div class="recommendation-input-group">
+            <label for="risk">Risk Appetite:</label>
+            <select id="risk">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+
+        <button onclick="recommendInvestments()">Get Recommendations</button>
+        <div id="result"></div>
+    </div>
+
+    <hr>
+
+    <footer>
+
+       
+         
+        <p><b>Contact me:</b> <a href="mailto:sambamichelle1@gmail.com.com">sambamichelle1@gmail.com</a>
+             | Phone: <a href="tel:(+254)714-563-442">(+254)714-563-442</a>        
+        </p>
+
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-linkedin-square'></i>LinkedIn</a> |
+            <a href="#"><i class='bx bxl-github'></i>Github</a> |
+            <a href="#"><i class='bx bxl-instagram' ></i>Instagram</a> |
+            <a href="#"> <i class='bx bxl-twitter'> </i>Twitter</a>
+        </div>
+
+    </footer>
+
+    <script>
+        function recommendInvestments() {
+            const capital = parseInt(document.getElementById('capital').value);
+            const period = document.getElementById('period').value;
+            const risk = document.getElementById('risk').value;
+            let recommendations = [];
+
+            // Validate capital input
+            if (isNaN(capital) || capital <= 0) {
+                alert('Please enter a valid positive starting capital');
+                return;
+            }
+
+            // Recommendation logic
+            if (capital <= 100000 && period === 'short' && risk === 'low') {
+                recommendations = ['Money Market Fund', 'Sacco'];
+            } else if (capital >= 100000 && period === 'short' && risk === 'low') {
+                recommendations = ['Money Market Fund', 'Treasury Bills', 'Sacco'];
+            } else if (capital <= 100000 && period === 'long' && risk === 'low') {
+                recommendations = ['Money Market Fund', 'Treasury Bonds', 'Sacco'];
+            } else if (capital <= 100000 && period === 'short' && (risk === 'medium' || risk === 'high')) {
+                recommendations = ['Real Estate', 'Stock Market'];
+            } else if (capital >= 100000 && period === 'long' && (risk === 'medium' || risk === 'high')) {
+                recommendations = ['Real Estate', 'Stock Market'];
+            }
+
+            // Display results
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = recommendations.length > 0 
+                ? `You can consider: ${recommendations.join(', ')}`
+                : 'No specific recommendations available for your input combination.';
+        }
+    </script>
+</body>
+</html>

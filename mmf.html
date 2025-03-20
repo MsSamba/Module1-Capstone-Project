@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- CTA TAB -->
+
+     <div id="cta-tab">
+        <a href="contact.html" class="cta-button">&#x1F4B0 Lets Chat &#x1F4B0</a>
+      </div>
+
+      <!-- NAVBAR -->
+
+    <div class="navbar">
+        <h1 class="logo">SMM</h1>
+        <div class="links">
+           <button class="home"><a href="index.html">Home</a></button>
+            <div class="dropdown">
+                <button class="dropbtn">Investment Options</button>
+                <div class="dropdown-content">
+                  <a href="mmf.html">Money Market Fund (MMF)</a>
+                  <a href="govtsecurities.html">Government Securities</a>
+                  <a href="realestate.html">Real Estate</a>
+                  <a href="saccos.html">Saccos</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    <hr>
+
+    <h2>Money Market Funds</h2>
+
+   <div class="mmf">
+    
+     <div class="mmf-image">
+        <img src="Images/mmf1.png" alt="MMF1" width="600px" height="400px">
+     </div>
+
+   <div class="mmf-body">
+
+    <h4>What is a Money Market Fund?</h4>
+    <p style="text-align: left;">A money market fund is a type of mutual fund that invests in <b><span style="color: goldenrod;">low-risk, short-term debt securities</span></b> such Treasury bills, commercial paper, and municipal debt. These funds are designed to provide <b><span style="color: goldenrod;">high liquidity and stability</span></b>, making them suitable for <b><span style="color: goldenrod;">short-term savings or emergency funds.</span></b></p>
+
+    <h4>Pros of investing in MMFs</h4>
+    <ul style="list-style-type: circle;">
+        <li>Professionally managed by experienced professionals who actively seek out high-quality, short-term debt instruments. This frees you from the burden of individual security selection.</li>
+        <li>High liquidity making it easy to access your investment when needed at short notice typically, 1 - 3 business days.</li>
+        <li>Relatively low risk compared to stocks or bonds due to short-term nature of the underlying investments in money market funds. </li>
+    </ul>
+
+    <h4>Money Market Funds can be a good fit for investors seeking:</h4>
+
+    <ul style="list-style-type: circle;">
+        <li>A safe and low-risk investment option to park their money.</li>
+        <li>Easy access to their funds while still earning a modest return.</li>
+        <li>A place to temporarily save funds for a capital intense project or investing in higher-risk, higher-return options.</li>
+    </ul>
+   </div>
+
+   </div>
+
+
+    <div class="calc-container">
+        <h3>MMF Calculator</h3>
+        <p>Use the calculator below to calculate your approximate return on investing in MMF over time.</p>
+        <div class="calculator">
+            <div class="input-group">
+                <label for="principal">Principal Amount (KES):</label>
+                <input type="number" id="principal" step="0.01" min="0" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="rate">Effective Annual Interest Rate (%):</label>
+                <input type="number" id="rate" step="0.1" min="0" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="years">Investment Period (years):</label>
+                <input type="number" id="years" step="0.5" min="0" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="compounds">Compounds Per Year:</label>
+                <input type="number" id="compounds" min="1" value="365" disabled>
+            </div>
+            
+            <div class="input-group">
+                <label for="monthlyTopUp">Monthly Top-up (KES):</label>
+                <input type="number" id="monthlyTopUp" step="0.01" min="0" required>
+            </div>
+            
+            <div class="result" id="result"></div>
+        </div>
+    
+    </div>
+
+    <div class="mmf-getstarted">
+        <p><b>Invest in MMFs: </b><a href="https://creativekigen.com/investing-in-kenya/#6_Money_Market_Funds_A_Low-Risk_Option">Learn More and Get Started</a></p>
+      </div>
+
+    <hr>
+
+    <footer>
+         
+    <p><b>Contact me:</b> <a href="mailto:sambamichelle1@gmail.com.com">sambamichelle1@gmail.com</a>
+         | Phone: <a href="tel:(+254)714-563-442">(+254)714-563-442</a>        
+    </p>
+
+    <div class="social-media">
+        <a href="#"><i class='bx bxl-linkedin-square'></i>LinkedIn</a> |
+        <a href="#"><i class='bx bxl-github'></i>Github</a> |
+        <a href="#"><i class='bx bxl-instagram' ></i>Instagram</a> |
+        <a href="#"> <i class='bx bxl-twitter'> </i>Twitter</a>
+    </div>
+
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
